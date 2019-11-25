@@ -37,7 +37,7 @@
         <script src="js/jquery-3.4.1.min.js"></script>
         <script src="js/jquery.background-video.js"></script>
         <script>
-            $(document).ready(function(){
+            $(document).ready( () => {
               var video = 0;
 
               setTimeout( () => {
@@ -53,7 +53,7 @@
                 showPausePlay: false
               });
 
-              $('#video-1').on('ended',function(){
+              $('#video-1').on('ended',() => {
                 $('#video-'+video).get(0).pause();
                 $('#video-'+video).fadeOut(500);
                 setTimeout(()=> {
@@ -63,7 +63,7 @@
                   video = 0;
                 }, 500)
               });
-              $('#video-2').on('ended',function(){
+              $('#video-2').on('ended',() => {
                 $('#video-'+video).get(0).pause();
                 $('#video-'+video).fadeOut(500);
                 setTimeout(()=> {
@@ -73,7 +73,7 @@
                   video = 0;
                 }, 500)
               });
-              $('#video-3').on('ended',function(){
+              $('#video-3').on('ended',() => {
                 $('#video-'+video).get(0).pause();
                 $('#video-'+video).fadeOut(500);
                 setTimeout(()=> {
@@ -85,7 +85,7 @@
               });
               
 
-              $(document).keyup(function(event) {
+              $(document).keyup( (event) => {
                 if(video == 0) {
                   if(event.which == 49 || event.which == 97) {
                     $('#video-0').get(0).pause();
@@ -115,7 +115,7 @@
                 else {
                   $('#video-'+video).get(0).pause();
                   $('#video-'+video).fadeOut(500);
-                  setTimeout(()=> {
+                  setTimeout( () => {
                     $('#video-'+video).get(0).currentTime = 0;
                     $('#video-0').get(0).play();
                     $('#video-0').fadeIn(500);
