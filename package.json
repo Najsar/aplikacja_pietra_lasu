@@ -8,6 +8,7 @@
     "pack": "electron-builder --dir",
     "dist": "electron-builder"
   },
+  "repository": "https://github.com/Najsar/aplikacja_pietra_lasu",
   "author": "Patryk Najsarek",
   "license": "CC0-1.0",
   "devDependencies": {
