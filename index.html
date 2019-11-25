@@ -1,0 +1,129 @@
+<html lang="pl-PL">
+    <head>
+        <title>Podróż przez piętra lasu</title>
+        <meta charset="utf-8">
+        <style>
+        body {
+          overflow: hidden;
+          background-color: black;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 0;
+          padding: 0;
+        }
+        #videos {
+          height: 970px;
+          width: 560px;
+          overflow: hidden;
+        }
+        </style>
+    </head>
+    <body>
+      <div id="videos">
+        <video id="video-0" class="background-video" loop autoplay playsinline>
+          <source src="video/Animacja-drzewa-v2.mp4" type="video/mp4">
+        </video>
+        <video id="video-1" class="background-video" autoplay playsinline style="display: none;">
+          <source src="video/rzekotka.mp4" type="video/mp4">
+        </video>
+        <video id="video-2" class="background-video" autoplay playsinline style="display: none;">
+          <source src="video/puszczyk.mp4" type="video/mp4">
+        </video>
+        <video id="video-3" class="background-video" autoplay playsinline style="display: none;">
+          <source src="video/borsuk.mp4" type="video/mp4">
+        </video>
+      </div>
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <script src="js/jquery.background-video.js"></script>
+        <script>
+            $(document).ready(function(){
+              var video = 0;
+
+              setTimeout( () => {
+                $('#video-1').get(0).pause();
+                $('#video-2').get(0).pause();
+                $('#video-3').get(0).pause();
+              }, 1000);
+
+              $('.background-video').bgVideo({
+                fullScreen: false,
+                fadeIn: 0,
+                pauseAfter: 0,
+                showPausePlay: false
+              });
+
+              $('#video-1').on('ended',function(){
+                $('#video-'+video).get(0).pause();
+                $('#video-'+video).fadeOut(500);
+                setTimeout(()=> {
+                  $('#video-'+video).get(0).currentTime = 0;
+                  $('#video-0').get(0).play();
+                  $('#video-0').fadeIn(500);
+                  video = 0;
+                }, 500)
+              });
+              $('#video-2').on('ended',function(){
+                $('#video-'+video).get(0).pause();
+                $('#video-'+video).fadeOut(500);
+                setTimeout(()=> {
+                  $('#video-'+video).get(0).currentTime = 0;
+                  $('#video-0').get(0).play();
+                  $('#video-0').fadeIn(500);
+                  video = 0;
+                }, 500)
+              });
+              $('#video-3').on('ended',function(){
+                $('#video-'+video).get(0).pause();
+                $('#video-'+video).fadeOut(500);
+                setTimeout(()=> {
+                  $('#video-'+video).get(0).currentTime = 0;
+                  $('#video-0').get(0).play();
+                  $('#video-0').fadeIn(500);
+                  video = 0;
+                }, 500)
+              });
+              
+
+              $(document).keyup(function(event) {
+                if(video == 0) {
+                  if(event.which == 49 || event.which == 97) {
+                    $('#video-0').get(0).pause();
+                    $('#video-0').fadeOut(0);
+
+                    $('#video-1').get(0).play();
+                    $('#video-1').fadeIn(0);
+                    video = 1;
+                  }
+                  if(event.which == 50 || event.which == 98) {
+                    $('#video-0').get(0).pause();
+                    $('#video-0').fadeOut(0);
+
+                    $('#video-2').get(0).play();
+                    $('#video-2').fadeIn(0);
+                    video = 2;
+                  }
+                  if(event.which == 48 || event.which == 96) {
+                    $('#video-0').get(0).pause();
+                    $('#video-0').fadeOut(0);
+
+                    $('#video-3').get(0).play();
+                    $('#video-3').fadeIn(0);
+                    video = 3;
+                  }
+                }
+                else {
+                  $('#video-'+video).get(0).pause();
+                  $('#video-'+video).fadeOut(500);
+                  setTimeout(()=> {
+                    $('#video-'+video).get(0).currentTime = 0;
+                    $('#video-0').get(0).play();
+                    $('#video-0').fadeIn(500);
+                    video = 0;
+                  }, 500)
+                }
+              });
+            });
+        </script>
+    </body>
+</html>

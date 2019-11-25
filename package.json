@@ -1,0 +1,21 @@
+{
+  "name": "pietra_lasu",
+  "version": "1.0.0",
+  "description": "Podróż przez piętra lasu",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "author": "Patryk Najsarek",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^7.1.1",
+    "electron-builder": "^22.1.0"
+  },
+  "dependencies": {
+    "electron-reload": "^1.5.0",
+    "jquery-background-video": "^1.1.0"
+  }
+}
