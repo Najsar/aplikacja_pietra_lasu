@@ -11,7 +11,7 @@ function createWindow () {
     height: 960,
     frame: false,
     icon: 'build/icon.png',
-    fullscreen: true
+    fullscreen: false
   })
 
   mainWindow.removeMenu()
