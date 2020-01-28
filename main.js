@@ -7,11 +7,11 @@ let mainWindow
 
 function createWindow () {
   mainWindow = new BrowserWindow({
-    width: 540,
-    height: 960,
+    width: 1080,
+    height: 1920,
     frame: false,
     icon: 'build/icon.png',
-    fullscreen: false
+    fullscreen: true
   })
 
   mainWindow.removeMenu()
